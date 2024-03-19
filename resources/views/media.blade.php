@@ -68,16 +68,20 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
                                 <div>
                                     <h1 class="lg:text-2xl text-sm lg:mt-16">Enjeux</h1>
                                     <a href="/transition"
-                                        class="lg:text-xl text-sm lg:mt-4  text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                        class="lg:text-xl text-sm lg:mt-4  text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
                                         Transition écologique et sociétale</a>
                                     <p></p>
                                     <a href="/technologie"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('technologie') ? 'text-blue-700' : '' }}">
                                         Technologie et performance</a>
                                     <p></p>
                                     <a href="/culture"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('culture') ? 'text-blue-700' : '' }}">
                                         Culture et responsabilité d'entreprise</a>
+                                    <p></p>
+                                    <a href="#"
+                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                        Mécanisation et dynamisation de l’agriculture en <br> Afrique</a>
                                 </div>
                                 <div class="lg:ml-24">
                                     <h1 class="lg:text-2xl lg:mt-24"></h1>
@@ -89,7 +93,10 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
                                     <a href="/creation"
                                         class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('creation') ? 'text-blue-700' : '' }}">
                                         Création et préservation de valeur</a>
-
+                                    <p></p>
+                                    <a href="#"
+                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                        Automatisation et dynamisation de l’élevage </a>
                                 </div>
                                 <div class="lg:ml-24">
                                     <h1 class="lg:text-2xl lg:mt-24"></h1>
@@ -108,10 +115,145 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
                             </div>
                         </nav>
                     </li>
+                    <li>
+                        <button id="expertisesButton"
+                            class="xl text-black whitespace-nowrap hover:text-orange-500 inline-block border-b-4 border-transparent hover:border-red-500 pb-1">
+                            Secteur d’activités
+                        </button>
+                        <nav id="expertisesNav"
+                            class="fixed z-10 h-screen bg-slate-800 w-full top-16 text-slate-100 left-0 p-8 shadow-lg"
+                            style="display: none;">
+                            <button id="closeExpertisesButton" class="float-right ">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                            <div class="lg:flex">
+                                <div>
+                                    <h1 class="lg:text-2xl lg:mt-16">Secteur d’activités</h1>
+                                    <a href="#"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                        Audit</a>
+                                    <p></p>
+                                    <a href="#"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                        Etudes</a>
+                                    <p></p>
+                                    <a href="#"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                        Comptabilité</a>
+                                    <p></p>
+                                    <a href="#"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                        Management et organisation </a>
+                                    <p></p>
+                                    <a href="#"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                        Stratégie </a>
+                                    <p></p>
+                                    <a href="#"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                        Conduite de changement</a>
+                                    <p></p>
+                                    <a href="/organisations"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('organisations') ? 'text-blue-700' : '' }}">
+                                        Conseil aux organisations</a>
+                                    <p></p>
+                                    <a href="/gestion"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('gestion') ? 'text-blue-700' : '' }}">
+                                        Conseil en gestion des risques</a>
+                                    <p></p>
+                                    <a href="#"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                        Conseil en stratégie
+                                    </a>
+                                </div>
+
+                                <div class="lg:ml-24 lg:mt-24">
+                                    <a href="#"
+                                        class="lg:text-2xl lg:mt-6 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}"></a>
+                                    <a href="/transaction"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
+                                        Transactions
+                                    </a>
+                                    <p></p>
+                                    <a href="#"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
+                                        Etudes
+                                    </a>
+                                    <p></p>
+                                    <a href="#"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
+                                        Formations
+                                    </a>
+                                    <p></p>
+                                    <a href="#"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
+                                        Développement durable
+                                    </a>
+                                    <p></p>
+                                    <a href="#"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
+                                        Prestations de services
+                                    </a>
+                                    <p></p>
+                                    <a href="#"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                        Transformation digitale </a>
+                                        <p></p>
+                                    <a href="#"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                        Développement durable</a>
+                                        <p></p>
+                                    <a href="#"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                        Responsabilité Sociale de l’Entreprise (RSE) </a>
+                                        <p></p>
+                                    <a href="#"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                        Big data </a>
+                                       
+                                </div>
+                                <div class="lg:ml-24 lg:mt-24">
+                                    <a href="#"
+                                        class="lg:text-2xl lg:mt-6 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}"></a>
+                                    <a href="#"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                        Génie civil et BTP
+                                    </a>
+                                    <p></p>
+                                    <a href="#"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
+                                        Ingénierie informatique 
+                                    </a>
+                                    <p></p>
+                                    <a href="#"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
+                                        Représentation de groupes internationaux
+                                    </a>
+                                    <p></p>
+                                    <a href="#"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
+                                        Agriculture et élevage
+                                    </a>
+                                        <p></p>
+                                    <a href="#"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                        Finances publiques </a>
+                                        <p></p>
+                                    <a href="#"
+                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                        Conseils juridique et fiscal </a>
+                                </div>
+                            </div>
+                        </nav>
+                    </li>
                     <li class="">
                         <button id="secteurButton"
                             class="xl text-black whitespace-nowrap hover:text-orange-500 inline-block border-b-4 border-transparent hover:border-red-500 pb-1">
-                            Secteur d'activité
+                            Expertise
                         </button>
                         <nav id="secteurNav"
                             class="fixed z-10 h-screen bg-slate-800 w-full top-16 text-slate-100 left-0 p-8 shadow-lg"
@@ -124,14 +266,17 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
                             </button>
                             <div class="lg:flex">
                                 <div>
-                                    <h1 class="lg:text-2xl lg:mt-16">Votre secteur</h1>
+                                    <a href="/expertise"
+                                        class="lg:text-2xl lg:mt-16 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('expertise') ? 'text-blue-700' : '' }}">Expertises</a>
+                                    <p></p>
+                                   
                                     <a href="/aeronautique"
                                         class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
                                         Aéronautique, défense et sécurité</a>
                                     <p></p>
                                     <a href="/assurance"
                                         class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('assurance') ? 'text-blue-700' : '' }}">
-                                        Assurance</a>
+                                        Conseils juridique et fiscal</a>
                                     <p></p>
                                     <a href="/automobile"
                                         class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('automobile') ? 'text-blue-700' : '' }}">
@@ -166,11 +311,11 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
                                     <h1 class="lg:text-2xl lg:mt-24"></h1>
                                     <a href="/energie"
                                         class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('energie') ? 'text-blue-700' : '' }}">
-                                        Énergie et ressources</a>
+                                        Ingénierie en énergie solaire</a>
                                     <p></p>
                                     <a href="/hotelle"
                                         class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('hotelle') ? 'text-blue-700' : '' }}">
-                                        Immobilier et hôtellerie</a>
+                                        Génie-civil</a>
                                     <p></p>
                                     <a href="/industrie"
                                         class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('industrie') ? 'text-blue-700' : '' }}">
@@ -200,12 +345,12 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
                                     <p></p>
                                     <a href="#"
                                         class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-                                        Service Public
+                                        Passation des marchés publics
                                     </a>
                                     <p></p>
                                     <a href="#"
                                         class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-                                        Mines et minéraux
+                                        Ingénierie en énergie solaire
                                     </a>
                                 </div>
                                 <div class="lg:ml-24">
@@ -214,116 +359,49 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
                                         class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('techonologieservice') ? 'text-blue-700' : '' }}">
                                         Technologie</a>
                                     <p></p>
-                                    <a href="/assurance"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('assurance') ? 'text-blue-700' : '' }}">
-                                        Assurance</a>
+                                    <a href="#"
+                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                        Ingénierie en système d’information</a>
                                     <p></p>
                                     <a href="/telecommunication"
                                         class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('telecommunication') ? 'text-blue-700' : '' }}">
-                                        Télécommunications</a>
+                                        Ingénierie réseaux</a>
                                     <p></p>
                                     <a href="#"
                                         class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-                                        Administration
+                                        Ingénierie en informatique
                                     </a>
                                     <p></p>
                                     <a href="#"
                                         class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-                                        Agriculture
+                                        Conseil agricole
                                     </a>
                                     <p></p>
                                     <a href="#"
                                         class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-                                        Chimie
+                                        Conseil en production animale
                                     </a>
                                     <p></p>
                                     <a href="#"
                                         class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-                                        L’eau
+                                        Ingénierie en technologie alimentaire
                                     </a>
                                     <p></p>
                                     <a href="#"
                                         class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-                                        Services
+                                        Ingénierie industrielle
                                     </a>
                                     <p></p>
                                     <a href="#"
                                         class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-                                        Transport
+                                        Ingénierie en énergie électrique
                                     </a>
 
                                 </div>
                             </div>
                         </nav>
                     </li>
-                    <li>
-                        <button id="expertisesButton"
-                            class="xl text-black whitespace-nowrap hover:text-orange-500 inline-block border-b-4 border-transparent hover:border-red-500 pb-1">
-                            Expertises
-                        </button>
-                        <nav id="expertisesNav"
-                            class="fixed z-10 h-screen bg-slate-800 w-full top-16 text-slate-100 left-0 p-8 shadow-lg"
-                            style="display: none;">
-                            <button id="closeExpertisesButton" class="float-right ">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
-                            <div class="lg:flex">
-                                <div>
-                                    <a href="/expertise"
-                                        class="lg:text-2xl lg:mt-16 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('expertise') ? 'text-blue-700' : '' }}">Expertises</a>
-                                    <p></p>
-                                    <a href="/organisations"
-                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('organisations') ? 'text-blue-700' : '' }}">
-                                        Conseil aux organisations</a>
-                                    <p></p>
-                                    <a href="/gestion"
-                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('gestion') ? 'text-blue-700' : '' }}">
-                                        Conseil en gestion des risques</a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-                                        Conseil en stratégie
-                                    </a>
-                                </div>
-                                {{--  <a href="#"
-        class="text-xl mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-        Expertise juridique et fiscale
-        </a>  --}}
-                                <div class="lg:ml-24 lg:mt-24">
-                                    <a href="#"
-                                        class="lg:text-2xl lg:mt-6 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}"></a>
-                                    <a href="/transaction"
-                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
-                                        Transactions
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
-                                        Etudes
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
-                                        Formations
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
-                                        Développement durable
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
-                                        Prestations de services
-                                    </a>
-                                </div>
-                            </div>
-                        </nav>
-                    </li>
+                    
 
                     <li><a href="/solutions"
                             class="xl  text-black hover:text-orange-500 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('solutions') ? 'text-blue-700' : '' }}">Solutions
@@ -347,9 +425,9 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
                             <div class="lg:flex">
                                 <div>
                                     <a href="/a-propos"
-                                            class="lg:text-2xl mg:mt-16 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('a-propos') ? 'text-blue-700' : '' }}">
-                                            Qui sommes-nous ?</a>
-                                            <p></p>
+                                        class="lg:text-2xl mg:mt-16 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('a-propos') ? 'text-blue-700' : '' }}">
+                                        Qui sommes-nous ?</a>
+                                    <p></p>
                                     <a href="#"
                                         class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
                                         Actualités et perspectives</a>
@@ -416,8 +494,8 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
                                     <p></p>
                                     <a href="#"
                                         class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Université Catholique de l’Afrique de l’Ouest
-                                        (UCAO)</a>
+                                        ABERME (Agence Béninoise d’Electrification<br> Rurale et de Maîtrise de
+                                        l’Energie)</a>
                                     <p></p>
                                     <a href="#"
                                         class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
@@ -425,17 +503,17 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
                                     <p></p>
                                     <a href="#"
                                         class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Direction Générale du Trésor et de la Comptabilité <br>Publique (DGTCP)
+                                        BENINKASHER (urbanisation et promotion<br> immobilière)
                                     </a>
                                     <p></p>
                                     <a href="#"
                                         class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Direction Générale des Impôts (DGI)
+                                        B3C (urbanisation et promotion immobilière)
                                     </a>
                                     <p></p>
                                     <a href="#"
                                         class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Direction Générale de l’Economie (DGE) (DGE)
+                                        BENIN FISHER (pisciculture)
                                     </a>
                                     <p></p>
                                     <a href="#"
@@ -465,14 +543,13 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
                                     <p></p>
                                     <a href="#"
                                         class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Société Béninoise des Manutentions Portuaires (SOBEMAP)
+                                        CHRONOKASH (exploitation de carrière de granite<br> et concassage)
 
                                     </a>
                                     <p></p>
                                     <a href="#"
                                         class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Office National de Sécurité Alimentaire
-                                        <br>(Ex-ONASA)
+                                        CEO (Centre d’Education Ouvrière)<br> (agriculture et agroforesterie)
                                     </a>
                                     <p></p>
                                     <a href="/distrubition"
@@ -495,15 +572,15 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
                                     <h1 class="lg:text-2xl lg:mt-24"></h1>
                                     <a href="#"
                                         class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        MIC </a>
+                                        Bénin </a>
                                     <p></p>
                                     <a href="#"
                                         class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Maison de la Société Civile (MdSC) </a>
+                                        Togo </a>
                                     <p></p>
                                     <a href="#"
                                         class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        BENIN MARINA HOTEL </a>
+                                        Union des Comores </a>
                                     <p></p>
                                     <a href="#"
                                         class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">

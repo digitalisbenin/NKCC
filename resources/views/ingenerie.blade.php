@@ -16,573 +16,650 @@
 $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))" :class="{ 'b eh': darkMode === true }">
     <!-- ===== Header Start ===== -->
     <header class="g s r vd ya  " :class="{ 'hh sm _k dj bl ll': stickyMenu }"
-    @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false">
-    <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
-        <div class="vd to/4 tc wf yf">
+        @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false">
+        <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
+            <div class="vd to/4 tc wf yf">
 
-            <a href="/">
-                <img class="om h-7 lg:h-16" src="images/logo_nkccg.png" alt="Logo Light" height="60" />
+                <a href="/">
+                    <img class="om h-7 lg:h-16" src="images/logo_nkccg.png" alt="Logo Light" height="60" />
 
-            </a>
+                </a>
 
-            <!-- Hamburger Toggle BTN -->
-            <button class="po rc" @click="navigationOpen = !navigationOpen">
-                <span class="rc i pf re pd">
-                    <span class="du-block h q vd yc">
-                        <span class="rc i r s eh um tg te rd eb ml jl dl"
-                            :class="{ 'ue el': !navigationOpen }"></span>
-                        <span class="rc i r s eh um tg te rd eb ml jl fl"
-                            :class="{ 'ue qr': !navigationOpen }"></span>
-                        <span class="rc i r s eh um tg te rd eb ml jl gl"
-                            :class="{ 'ue hl': !navigationOpen }"></span>
+                <!-- Hamburger Toggle BTN -->
+                <button class="po rc" @click="navigationOpen = !navigationOpen">
+                    <span class="rc i pf re pd">
+                        <span class="du-block h q vd yc">
+                            <span class="rc i r s eh um tg te rd eb ml jl dl"
+                                :class="{ 'ue el': !navigationOpen }"></span>
+                            <span class="rc i r s eh um tg te rd eb ml jl fl"
+                                :class="{ 'ue qr': !navigationOpen }"></span>
+                            <span class="rc i r s eh um tg te rd eb ml jl gl"
+                                :class="{ 'ue hl': !navigationOpen }"></span>
+                        </span>
+                        <span class="du-block h q vd yc lf">
+                            <span class="rc eh um tg ml jl el h na r ve yc"
+                                :class="{ 'sd dl': !navigationOpen }"></span>
+                            <span class="rc eh um tg ml jl qr h s pa vd rd"
+                                :class="{ 'sd rr': !navigationOpen }"></span>
+                        </span>
                     </span>
-                    <span class="du-block h q vd yc lf">
-                        <span class="rc eh um tg ml jl el h na r ve yc"
-                            :class="{ 'sd dl': !navigationOpen }"></span>
-                        <span class="rc eh um tg ml jl qr h s pa vd rd"
-                            :class="{ 'sd rr': !navigationOpen }"></span>
-                    </span>
-                </span>
-            </button>
-            <!-- Hamburger Toggle BTN -->
-        </div>
+                </button>
+                <!-- Hamburger Toggle BTN -->
+            </div>
 
-        <div class="vd wo/4 sd  qo f ho oo wf yf" :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }">
-            <nav>
-                <ul class="tc _o sf yo cg ">
-                    <li>
-                        <button id="enjeuxButton"
-                            class="xl text-black whitespace-nowrap hover:text-orange-500 inline-block border-b-4 border-transparent hover:border-red-500 pb-1">
-                            Enjeux
-                        </button>
-                        <nav id="enjeuxNav"
-                            class="fixed z-10 h-screen bg-slate-800 w-full top-16 text-slate-100 left-0 p-8 shadow-lg"
-                            style="display: none;">
-                            <button id="closeEnjeuxNav" class="float-right">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
+            <div class="vd wo/4 sd  qo f ho oo wf yf" :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }">
+                <nav>
+                    <ul class="tc _o sf yo cg ">
+                        <li>
+                            <button id="enjeuxButton"
+                                class="xl text-black whitespace-nowrap hover:text-orange-500 inline-block border-b-4 border-transparent hover:border-red-500 pb-1">
+                                Enjeux
                             </button>
-                            <div class="lg:flex">
-                                <div>
-                                    <h1 class="lg:text-2xl text-sm lg:mt-16">Enjeux</h1>
-                                    <a href="/transition"
-                                        class="lg:text-xl text-sm lg:mt-4  text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Transition écologique et sociétale</a>
-                                    <p></p>
-                                    <a href="/technologie"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Technologie et performance</a>
-                                    <p></p>
-                                    <a href="/culture"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Culture et responsabilité d'entreprise</a>
+                            <nav id="enjeuxNav"
+                                class="fixed z-10 h-screen bg-slate-800 w-full top-16 text-slate-100 left-0 p-8 shadow-lg"
+                                style="display: none;">
+                                <button id="closeEnjeuxNav" class="float-right">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                                <div class="lg:flex">
+                                    <div>
+                                        <h1 class="lg:text-2xl text-sm lg:mt-16">Enjeux</h1>
+                                        <a href="/transition"
+                                            class="lg:text-xl text-sm lg:mt-4  text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
+                                            Transition écologique et sociétale</a>
+                                        <p></p>
+                                        <a href="/technologie"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('technologie') ? 'text-blue-700' : '' }}">
+                                            Technologie et performance</a>
+                                        <p></p>
+                                        <a href="/culture"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('culture') ? 'text-blue-700' : '' }}">
+                                            Culture et responsabilité d'entreprise</a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Mécanisation et dynamisation de l’agriculture en <br> Afrique</a>
+                                    </div>
+                                    <div class="lg:ml-24">
+                                        <h1 class="lg:text-2xl lg:mt-24"></h1>
+                                        <a href="/transparence"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transparence') ? 'text-blue-700' : '' }}">
+                                            Transparence et maîtrise des risques
+                                        </a>
+                                        <p></p>
+                                        <a href="/creation"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('creation') ? 'text-blue-700' : '' }}">
+                                            Création et préservation de valeur</a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Automatisation et dynamisation de l’élevage </a>
+                                    </div>
+                                    <div class="lg:ml-24">
+                                        <h1 class="lg:text-2xl lg:mt-24"></h1>
+                                        <a href="/transformation"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transformation') ? 'text-blue-700' : '' }}">
+                                            Transformation des business models</a>
+                                        <p></p>
+                                        <a href="/croissance"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('croissance') ? 'text-blue-700' : '' }}">
+                                            Croissance des ETI</a>
+                                        <p></p>
+                                        <a href="/startups"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('startups') ? 'text-blue-700' : '' }}">
+                                            Startups et innovation</a>
+                                    </div>
                                 </div>
-                                <div class="lg:ml-24">
-                                    <h1 class="lg:text-2xl lg:mt-24"></h1>
-                                    <a href="/transparence"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transparence') ? 'text-blue-700' : '' }}">
-                                        Transparence et maîtrise des risques
-                                    </a>
-                                    <p></p>
-                                    <a href="/creation"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('creation') ? 'text-blue-700' : '' }}">
-                                        Création et préservation de valeur</a>
-
-                                </div>
-                                <div class="lg:ml-24">
-                                    <h1 class="lg:text-2xl lg:mt-24"></h1>
-                                    <a href="/transformation"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transformation') ? 'text-blue-700' : '' }}">
-                                        Transformation des business models</a>
-                                    <p></p>
-                                    <a href="/croissance"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('croissance') ? 'text-blue-700' : '' }}">
-                                        Croissance des ETI</a>
-                                    <p></p>
-                                    <a href="/startups"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('startups') ? 'text-blue-700' : '' }}">
-                                        Startups et innovation</a>
-                                </div>
-                            </div>
-                        </nav>
-                    </li>
-                    <li class="">
-                        <button id="secteurButton"
-                            class="xl text-black whitespace-nowrap hover:text-orange-500 inline-block border-b-4 border-transparent hover:border-red-500 pb-1">
-                            Secteur d'activité
-                        </button>
-                        <nav id="secteurNav"
-                            class="fixed z-10 h-screen bg-slate-800 w-full top-16 text-slate-100 left-0 p-8 shadow-lg"
-                            style="display: none;">
-                            <button id="closeSecteurNav" class="float-right">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
+                            </nav>
+                        </li>
+                        <li>
+                            <button id="expertisesButton"
+                                class="xl text-black whitespace-nowrap hover:text-orange-500 inline-block border-b-4 border-transparent hover:border-red-500 pb-1">
+                                Secteur d’activités
                             </button>
-                            <div class="lg:flex">
-                                <div>
-                                    <h1 class="lg:text-2xl lg:mt-16">Votre secteur</h1>
-                                    <a href="/aeronautique"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Aéronautique, défense et sécurité</a>
-                                    <p></p>
-                                    <a href="/assurance"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('assurance') ? 'text-blue-700' : '' }}">
-                                        Assurance</a>
-                                    <p></p>
-                                    <a href="/automobile"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('automobile') ? 'text-blue-700' : '' }}">
-                                        Automobile</a>
-                                    <p></p>
-                                    <a href="/banque"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('banque') ? 'text-blue-700' : '' }}">
-                                        Banques et marchés de capitaux
-                                    </a>
-                                    <p></p>
-                                    <a href="/distrubition"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('distrubition') ? 'text-blue-700' : '' }}">
-                                        Distribution et biens de consommation
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-                                        Education
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-                                        Ressources Naturelles
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-                                        Santé
-                                    </a>
-                                </div>
-                                <div class="lg:ml-24">
-                                    <h1 class="lg:text-2xl lg:mt-24"></h1>
-                                    <a href="/energie"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('energie') ? 'text-blue-700' : '' }}">
-                                        Énergie et ressources</a>
-                                    <p></p>
-                                    <a href="/hotelle"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('hotelle') ? 'text-blue-700' : '' }}">
-                                        Immobilier et hôtellerie</a>
-                                    <p></p>
-                                    <a href="/industrie"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('industrie') ? 'text-blue-700' : '' }}">
-                                        Industries de santé
-                                    </a>
-                                    <p></p>
-                                    <a href="/ingenerie"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('ingenerie') ? 'text-blue-700' : '' }}">
-                                        Ingénierie et construction
+                            <nav id="expertisesNav"
+                                class="fixed z-10 h-screen bg-slate-800 w-full top-16 text-slate-100 left-0 p-8 shadow-lg"
+                                style="display: none;">
+                                <button id="closeExpertisesButton" class="float-right ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                                <div class="lg:flex">
+                                    <div>
+                                        <h1 class="lg:text-2xl lg:mt-16">Secteur d’activités</h1>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Audit</a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Etudes</a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Comptabilité</a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Management et organisation </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Stratégie </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Conduite de changement</a>
+                                        <p></p>
+                                        <a href="/organisations"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('organisations') ? 'text-blue-700' : '' }}">
+                                            Conseil aux organisations</a>
+                                        <p></p>
+                                        <a href="/gestion"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('gestion') ? 'text-blue-700' : '' }}">
+                                            Conseil en gestion des risques</a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Conseil en stratégie
+                                        </a>
+                                    </div>
 
-                                    </a>
-                                    <p></p>
-                                    <a href="/media"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('media') ? 'text-blue-700' : '' }}">
-                                        Médias et loisirs
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-                                        Développement économique et Industriel
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-                                        Sciences de la Vie
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-                                        Service Public
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-                                        Mines et minéraux
-                                    </a>
+                                    <div class="lg:ml-24 lg:mt-24">
+                                        <a href="#"
+                                            class="lg:text-2xl lg:mt-6 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}"></a>
+                                        <a href="/transaction"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
+                                            Transactions
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
+                                            Etudes
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
+                                            Formations
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
+                                            Développement durable
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
+                                            Prestations de services
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Transformation digitale </a>
+                                            <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Développement durable</a>
+                                            <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Responsabilité Sociale de l’Entreprise (RSE) </a>
+                                            <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Big data </a>
+                                           
+                                    </div>
+                                    <div class="lg:ml-24 lg:mt-24">
+                                        <a href="#"
+                                            class="lg:text-2xl lg:mt-6 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}"></a>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Génie civil et BTP
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
+                                            Ingénierie informatique 
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
+                                            Représentation de groupes internationaux
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
+                                            Agriculture et élevage
+                                        </a>
+                                            <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Finances publiques </a>
+                                            <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Conseils juridique et fiscal </a>
+                                    </div>
                                 </div>
-                                <div class="lg:ml-24">
-                                    <h1 class="lg:text-2xl lg:mt-24"></h1>
-                                    <a href="/techonologieservice"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('techonologieservice') ? 'text-blue-700' : '' }}">
-                                        Technologie</a>
-                                    <p></p>
-                                    <a href="/assurance"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('assurance') ? 'text-blue-700' : '' }}">
-                                        Assurance</a>
-                                    <p></p>
-                                    <a href="/telecommunication"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('telecommunication') ? 'text-blue-700' : '' }}">
-                                        Télécommunications</a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-                                        Administration
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-                                        Agriculture
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-                                        Chimie
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-                                        L’eau
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-                                        Services
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-                                        Transport
-                                    </a>
-
-                                </div>
-                            </div>
-                        </nav>
-                    </li>
-                    <li>
-                        <button id="expertisesButton"
-                            class="xl text-black whitespace-nowrap hover:text-orange-500 inline-block border-b-4 border-transparent hover:border-red-500 pb-1">
-                            Expertises
-                        </button>
-                        <nav id="expertisesNav"
-                            class="fixed z-10 h-screen bg-slate-800 w-full top-16 text-slate-100 left-0 p-8 shadow-lg"
-                            style="display: none;">
-                            <button id="closeExpertisesButton" class="float-right ">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M6 18L18 6M6 6l12 12" />
-                                </svg>
+                            </nav>
+                        </li>
+                        <li class="">
+                            <button id="secteurButton"
+                                class="xl text-black whitespace-nowrap hover:text-orange-500 inline-block border-b-4 border-transparent hover:border-red-500 pb-1">
+                                Expertise
                             </button>
-                            <div class="lg:flex">
-                                <div>
-                                    <a href="/expertise"
-                                        class="lg:text-2xl lg:mt-16 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('expertise') ? 'text-blue-700' : '' }}">Expertises</a>
-                                    <p></p>
-                                    <a href="/organisations"
-                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('organisations') ? 'text-blue-700' : '' }}">
-                                        Conseil aux organisations</a>
-                                    <p></p>
-                                    <a href="/gestion"
-                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('gestion') ? 'text-blue-700' : '' }}">
-                                        Conseil en gestion des risques</a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-                                        Conseil en stratégie
-                                    </a>
-                                </div>
-                                {{--  <a href="#"
-        class="text-xl mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
-        Expertise juridique et fiscale
-        </a>  --}}
-                                <div class="lg:ml-24 lg:mt-24">
-                                    <a href="#"
-                                        class="lg:text-2xl lg:mt-6 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}"></a>
-                                    <a href="/transaction"
-                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
-                                        Transactions
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
-                                        Etudes
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
-                                        Formations
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
-                                        Développement durable
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl text-sm  lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('transition') ? 'text-blue-700' : '' }}">
-                                        Prestations de services
-                                    </a>
-                                </div>
-                            </div>
-                        </nav>
-                    </li>
+                            <nav id="secteurNav"
+                                class="fixed z-10 h-screen bg-slate-800 w-full top-16 text-slate-100 left-0 p-8 shadow-lg"
+                                style="display: none;">
+                                <button id="closeSecteurNav" class="float-right">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                                <div class="lg:flex">
+                                    <div>
+                                        <a href="/expertise"
+                                            class="lg:text-2xl lg:mt-16 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('expertise') ? 'text-blue-700' : '' }}">Expertises</a>
+                                        <p></p>
+                                       
+                                        <a href="/aeronautique"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Aéronautique, défense et sécurité</a>
+                                        <p></p>
+                                        <a href="/assurance"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('assurance') ? 'text-blue-700' : '' }}">
+                                            Conseils juridique et fiscal</a>
+                                        <p></p>
+                                        <a href="/automobile"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('automobile') ? 'text-blue-700' : '' }}">
+                                            Automobile</a>
+                                        <p></p>
+                                        <a href="/banque"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('banque') ? 'text-blue-700' : '' }}">
+                                            Banques et marchés de capitaux
+                                        </a>
+                                        <p></p>
+                                        <a href="/distrubition"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('distrubition') ? 'text-blue-700' : '' }}">
+                                            Distribution et biens de consommation
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Education
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Ressources Naturelles
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Santé
+                                        </a>
+                                    </div>
+                                    <div class="lg:ml-24">
+                                        <h1 class="lg:text-2xl lg:mt-24"></h1>
+                                        <a href="/energie"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('energie') ? 'text-blue-700' : '' }}">
+                                            Ingénierie en énergie solaire</a>
+                                        <p></p>
+                                        <a href="/hotelle"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('hotelle') ? 'text-blue-700' : '' }}">
+                                            Génie-civil</a>
+                                        <p></p>
+                                        <a href="/industrie"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('industrie') ? 'text-blue-700' : '' }}">
+                                            Industries de santé
+                                        </a>
+                                        <p></p>
+                                        <a href="/ingenerie"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('ingenerie') ? 'text-blue-700' : '' }}">
+                                            Ingénierie et construction
 
-                    <li><a href="/solutions"
-                            class="xl  text-black hover:text-orange-500 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('solutions') ? 'text-blue-700' : '' }}">Solutions
-                            digitales</a>
-                    </li>
-                    <li>
-                        <button id="sidenavButton"
-                            class="xl text-black whitespace-nowrap hover:text-orange-500 inline-block border-b-4 border-transparent hover:border-red-500 pb-1">
-                            Qui sommes-nous ?
-                        </button>
-                        <nav id="sidenavNav"
-                            class="fixed z-10 h-screen bg-slate-800 w-full top-16 text-slate-100 left-0 p-8 shadow-lg"
-                            style="display: none;">
-                            <button id="closeSidenavButton" class="float-right ">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M6 18L18 6M6 6l12 12" />
-                                </svg>
+                                        </a>
+                                        <p></p>
+                                        <a href="/media"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('media') ? 'text-blue-700' : '' }}">
+                                            Médias et loisirs
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Développement économique et Industriel
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Sciences de la Vie
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Passation des marchés publics
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Ingénierie en énergie solaire
+                                        </a>
+                                    </div>
+                                    <div class="lg:ml-24">
+                                        <h1 class="lg:text-2xl lg:mt-24"></h1>
+                                        <a href="/techonologieservice"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('techonologieservice') ? 'text-blue-700' : '' }}">
+                                            Technologie</a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Ingénierie en système d’information</a>
+                                        <p></p>
+                                        <a href="/telecommunication"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('telecommunication') ? 'text-blue-700' : '' }}">
+                                            Ingénierie réseaux</a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Ingénierie en informatique
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Conseil agricole
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Conseil en production animale
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Ingénierie en technologie alimentaire
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Ingénierie industrielle
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('#') ? 'text-blue-700' : '' }}">
+                                            Ingénierie en énergie électrique
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </nav>
+                        </li>
+                        
+
+                        <li><a href="/solutions"
+                                class="xl  text-black hover:text-orange-500 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('solutions') ? 'text-blue-700' : '' }}">Solutions
+                                digitales</a>
+                        </li>
+                        <li>
+                            <button id="sidenavButton"
+                                class="xl text-black whitespace-nowrap hover:text-orange-500 inline-block border-b-4 border-transparent hover:border-red-500 pb-1">
+                                Qui sommes-nous ?
                             </button>
-                            <div class="lg:flex">
-                                <div>
-                                    <a href="/a-propos"
+                            <nav id="sidenavNav"
+                                class="fixed z-10 h-screen bg-slate-800 w-full top-16 text-slate-100 left-0 p-8 shadow-lg"
+                                style="display: none;">
+                                <button id="closeSidenavButton" class="float-right ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                                <div class="lg:flex">
+                                    <div>
+                                        <a href="/a-propos"
                                             class="lg:text-2xl mg:mt-16 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('a-propos') ? 'text-blue-700' : '' }}">
                                             Qui sommes-nous ?</a>
-                                            <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Actualités et perspectives</a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Stratégie</a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Raison d’être et valeurs</a>
-                                </div>
-                                <div class="lg:ml-24">
-                                    <h1 class="lg:text-2xl lg:mt-24"></h1>
-                                    <a href="#"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Agir collectivement pour un impact<br> positif
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        CEthique et conformité</a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Actualités et perspectives</a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Stratégie</a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Raison d’être et valeurs</a>
+                                    </div>
+                                    <div class="lg:ml-24">
+                                        <h1 class="lg:text-2xl lg:mt-24"></h1>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Agir collectivement pour un impact<br> positif
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            CEthique et conformité</a>
 
+                                    </div>
+                                    <div class="lg:ml-24">
+                                        <h1 class="lg:text-2xl lg:mt-24"></h1>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Gouvernance</a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Publications institutionnelles</a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Où nous trouver ?</a>
+                                    </div>
                                 </div>
-                                <div class="lg:ml-24">
-                                    <h1 class="lg:text-2xl lg:mt-24"></h1>
-                                    <a href="#"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Gouvernance</a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Publications institutionnelles</a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Où nous trouver ?</a>
-                                </div>
-                            </div>
-                        </nav>
-                    </li>
-                    <li>
-                        <button id="sidepartButton"
-                            class="xl text-black whitespace-nowrap hover:text-orange-500 inline-block border-b-4 border-transparent hover:border-red-500 pb-1">
-                            Partenaire
-                        </button>
-                        <nav id="sidepartNav"
-                            class="fixed z-10 h-screen bg-slate-800 w-full top-16 text-slate-100 left-0 p-8 shadow-lg"
-                            style="display: none;">
-                            <button id="closeSidepartButton" class="float-right ">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M6 18L18 6M6 6l12 12" />
-                                </svg>
+                            </nav>
+                        </li>
+                        <li>
+                            <button id="sidepartButton"
+                                class="xl text-black whitespace-nowrap hover:text-orange-500 inline-block border-b-4 border-transparent hover:border-red-500 pb-1">
+                                Partenaire
                             </button>
+                            <nav id="sidepartNav"
+                                class="fixed z-10 h-screen bg-slate-800 w-full top-16 text-slate-100 left-0 p-8 shadow-lg"
+                                style="display: none;">
+                                <button id="closeSidepartButton" class="float-right ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
 
-                            <div class="lg:flex">
-                                <div>
-                                    <h1 class="lg:text-2xl lg:mt-16">Nos Partenaire</h1>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Université d’Abomey-Calavi (UAC)</a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Université Catholique de l’Afrique de l’Ouest
-                                        (UCAO)</a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Ministère de l’Economie et des Finances (MEF)</a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Direction Générale du Trésor et de la Comptabilité <br>Publique (DGTCP)
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Direction Générale des Impôts (DGI)
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Direction Générale de l’Economie (DGE) (DGE)
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Direction Générale des Douanes (DGD)
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Ministère de la Communication et de la Poste (MCP)
-                                    </a>
+                                <div class="lg:flex">
+                                    <div>
+                                        <h1 class="lg:text-2xl lg:mt-16">Nos Partenaire</h1>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Université d’Abomey-Calavi (UAC)</a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            ABERME (Agence Béninoise d’Electrification<br> Rurale et de Maîtrise de
+                                            l’Energie)</a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Ministère de l’Economie et des Finances (MEF)</a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            BENINKASHER (urbanisation et promotion<br> immobilière)
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            B3C (urbanisation et promotion immobilière)
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            BENIN FISHER (pisciculture)
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Direction Générale des Douanes (DGD)
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Ministère de la Communication et de la Poste (MCP)
+                                        </a>
+                                    </div>
+                                    <div class=" lg:ml-12">
+                                        <h1 class="lg:text-2xl lg:mt-24"></h1>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Ministère de la Santé (MS-BENIN)</a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Ministère de la Culture et du Tourisme (BENIN)</a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Société Nationale des Eaux du Bénin (SONEB)
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            CHRONOKASH (exploitation de carrière de granite<br> et concassage)
+
+                                        </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            CEO (Centre d’Education Ouvrière)<br> (agriculture et agroforesterie)
+                                        </a>
+                                        <p></p>
+                                        <a href="/distrubition"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            La Générale des Assurances du Bénin (GAB-S.A)
+                                        </a>
+                                        <p></p>
+                                        <a href="/distrubition"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Bureau Béninois du Droit d’Auteur et des Droits
+                                        </a>
+                                        <p></p>
+                                        <a href="/distrubition"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Hight Technology Stores SARL (HTS)
+                                        </a>
+
+                                    </div>
+                                    <div class="lg:ml-12">
+                                        <h1 class="lg:text-2xl lg:mt-24"></h1>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Bénin </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Togo </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Union des Comores </a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Entreprise RODINGOR
+                                        </a>
+                                        <p></p>
+                                        <a href="/distrubition"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Bureau Béninois du <br> Droit d’Auteur et des Droits<br>
+                                            Voisins (BUBEDRA)
+                                        </a>
+                                        <p></p>
+                                        <a href="/distrubition"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Entreprise HAD SERVICES
+                                        </a>
+                                        <p></p>
+                                        <a href="/distrubition"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Société EMINENCE PRESTATIONS
+                                        </a>
+                                    </div>
+
+
                                 </div>
-                                <div class=" lg:ml-12">
-                                    <h1 class="lg:text-2xl lg:mt-24"></h1>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Ministère de la Santé (MS-BENIN)</a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Ministère de la Culture et du Tourisme (BENIN)</a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Société Nationale des Eaux du Bénin (SONEB)
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Société Béninoise des Manutentions Portuaires (SOBEMAP)
-
-                                    </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Office National de Sécurité Alimentaire
-                                        <br>(Ex-ONASA)
-                                    </a>
-                                    <p></p>
-                                    <a href="/distrubition"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        La Générale des Assurances du Bénin (GAB-S.A)
-                                    </a>
-                                    <p></p>
-                                    <a href="/distrubition"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Bureau Béninois du Droit d’Auteur et des Droits
-                                    </a>
-                                    <p></p>
-                                    <a href="/distrubition"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Hight Technology Stores SARL (HTS)
-                                    </a>
-
-                                </div>
-                                <div class="lg:ml-12">
-                                    <h1 class="lg:text-2xl lg:mt-24"></h1>
-                                    <a href="#"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        MIC </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Maison de la Société Civile (MdSC) </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        BENIN MARINA HOTEL </a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl text-sm lg:mt-4 text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Entreprise RODINGOR
-                                    </a>
-                                    <p></p>
-                                    <a href="/distrubition"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Bureau Béninois du <br> Droit d’Auteur et des Droits<br>
-                                        Voisins (BUBEDRA)
-                                    </a>
-                                    <p></p>
-                                    <a href="/distrubition"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Entreprise HAD SERVICES
-                                    </a>
-                                    <p></p>
-                                    <a href="/distrubition"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Société EMINENCE PRESTATIONS
-                                    </a>
-                                </div>
-
-
-                            </div>
-                        </nav>
-                    </li>
-                    <li>
-                        <button id="sidenavaButton"
-                            class="xl text-black whitespace-nowrap hover:text-orange-500 inline-block border-b-4 border-transparent hover:border-red-500 pb-1">
-                            Carrières
-                        </button>
-                        <nav id="sidenavaNav"
-                            class="fixed z-10 h-screen bg-slate-800 w-full top-16 text-slate-100 left-0 p-8 shadow-lg"
-                            style="display: none;">
-                            <button id="closeSidenavaButton" class="float-right ">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M6 18L18 6M6 6l12 12" />
-                                </svg>
+                            </nav>
+                        </li>
+                        <li>
+                            <button id="sidenavaButton"
+                                class="xl text-black whitespace-nowrap hover:text-orange-500 inline-block border-b-4 border-transparent hover:border-red-500 pb-1">
+                                Carrières
                             </button>
+                            <nav id="sidenavaNav"
+                                class="fixed z-10 h-screen bg-slate-800 w-full top-16 text-slate-100 left-0 p-8 shadow-lg"
+                                style="display: none;">
+                                <button id="closeSidenavaButton" class="float-right ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
 
-                            <div class="lg:flex">
-                                <div>
-                                    <h1 class="lg:text-2xl text-sm lg:mt-16">Carrières</h1>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Pourquoi faire le choix de NKCCG ?</a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Quel métier est fait pour moi ?</a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Échanger avec nos collaborateurs</a>
-                                    <p></p>
-                                    <a href="#"
-                                        class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
-                                        Postuler</a>
+                                <div class="lg:flex">
+                                    <div>
+                                        <h1 class="lg:text-2xl text-sm lg:mt-16">Carrières</h1>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Pourquoi faire le choix de NKCCG ?</a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Quel métier est fait pour moi ?</a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Échanger avec nos collaborateurs</a>
+                                        <p></p>
+                                        <a href="#"
+                                            class="lg:text-xl lg:mt-4 text-sm text-white hover:bg-orange-500 hover:px-2 whitespace-nowrap inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('aeronautique') ? 'text-blue-700' : '' }}">
+                                            Postuler</a>
+                                    </div>
+
                                 </div>
+                            </nav>
+                        </li>
 
-                            </div>
-                        </nav>
-                    </li>
+                        <li><a href="/contact"
+                                class="xl text-black hover:text-orange-500 inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('contact') ? 'text-blue-700' : '' }}">Contact
 
-                    <li><a href="/contact"
-                            class="xl text-black hover:text-orange-500 inline-block border-b-4 border-transparent hover:border-red-500 pb-1 {{ request()->is('contact') ? 'text-blue-700' : '' }}">Contact
-
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
 
 
+            </div>
         </div>
-    </div>
-</header>
+    </header>
 
 
     <!-- ===== Header End ===== -->
